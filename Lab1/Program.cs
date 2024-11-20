@@ -2,9 +2,14 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello, World!");
+
+            // Printa ut alla flyg. Ta in använderans val. 
+            // Utifrån använderns val ge info om flygtid.
+            //Beräkning av flyg tid
+            //Console.WriteLine("Flight Table\n\n\t Stockholm -> [1] New York \n\t [2] New York -> Stockholm");
+            Console.WriteLine("1");
         }
     }
 }
