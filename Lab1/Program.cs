@@ -7,18 +7,36 @@ namespace Lab1
 
         static void Main()
         {
+            // Vi deklararera och instansierar flyg och tidzons information 
             int newYorkDepartureTimeHour = 10;
             int newYorkDepartureTimeMin = 10;
             int newYorkToStockholmTimeZoneDiffernece = 6;
             int stockholmDepartureTimeHour = 14;
             int stockholmDepartureTimeMin = 3;
             int stockholmToNewYorkTimeZoneDiffernece = -6;
+            /*
+            Vi deklarerar och instansier en bool för att 
+            använda den som condition i våran while-loop, 
+            */
             bool menu = true;
             while (menu)
             {
+                /*
+                 vi använder while-loopen för att skapa en menu,
+                vi använder en while-loop för att vi vill at programmet 
+                ska fortsätta tills användaren väljer att stänga av den,
+                 */
                 Console.Write("\n\t\tFlight Table \n\n\t[1] Stockholm -> New York\n\t[2] New York -> Stockholm\n\t[3] End Program");
                 Console.Write("\n\tCHOICE: ");
+                /*
+                 vi tar in en string-input från användaren och försöker 
+                konvertera den till en int32
+                som vi sedan använder som condition i våran switch-sats.
+                 */
                 Int32.TryParse(Console.ReadLine(), out int userInput);
+                /*
+                 
+                 */
                 switch (userInput)
                 {
                     case 1:
