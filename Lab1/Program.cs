@@ -34,20 +34,24 @@ namespace Lab1
                 som vi sedan använder som condition i våran switch-sats.
                  */
                 Int32.TryParse(Console.ReadLine(), out int userInput);
-                /*
-                 
-                 */
                 switch (userInput)
                 {
+                    /*
+                     En av 4 olika val händer beroende på användarens input.
+                    case 1 och case 2 skriver ut en flygdestinationer och tiden 
+                    flygen anländer och avgår med hjälp av FlightCalculation metoden
+                    case 3 sätter våran loop condition till false och avslutar programmet
+                    default skriver ut instruktioner om användaren skriver in ett felaktigt val
+                     */
                     case 1:
                         Console.Clear();
                         Console.WriteLine($"{lineSeperator}\n\t\tStockholm to New York\n");
-                        FlightCalculation(stockholmDepartureTimeHour, stockholmDepartureTimeMin, -timeZone,lineSeperator); 
+                        FlightCalculation(stockholmDepartureTimeHour, stockholmDepartureTimeMin, -timeZone, lineSeperator);
                         break;
                     case 2:
                         Console.Clear();
                         Console.WriteLine($"{lineSeperator}\n\t\tNew York to Stockholm\n");
-                        FlightCalculation(newYorkDepartureTimeHour, newYorkDepartureTimeMin, timeZone,lineSeperator);
+                        FlightCalculation(newYorkDepartureTimeHour, newYorkDepartureTimeMin, timeZone, lineSeperator);
                         break;
                     case 3:
                         menu = false;
@@ -60,13 +64,21 @@ namespace Lab1
                 }
             }
         }
+        /*
+        vi konverterar vår avgångstid till string för att få tvåtals precision
+        vi deklarerar och instansierar färdtiden
+        vi gör uträkning från tidigare givna parametrar som ger oss ankomsttiden
+        som vi sen konverterar till en tvåtals string
+        programmet skriver ut när planet avgår och anländer
+         */
         static void FlightCalculation(int departureHour, int departureMin, int timeZone, string line)
         {
             string departureHourStr = departureHour.ToString("00");
             string departureMinStr = departureMin.ToString("00");
             int travelTimeHour = 7;
             int travelTimeMin = 25;
-
+            // vi konverterar allt till minuter så allt kan
+            // adderas och sedan kan konverteras tillbaks till timmar
             int arrivalTimeHour = (((departureHour * 60) + (travelTimeHour * 60) + (timeZone * 60)) / 60);
             int arrivalTimeMin = departureMin + travelTimeMin;
             string arrivalTimeHourStr = arrivalTimeHour.ToString("00");
