@@ -10,10 +10,9 @@ namespace Lab1
             // Vi deklararera och instansierar flyg och tidzons information 
             int newYorkDepartureTimeHour = 10;
             int newYorkDepartureTimeMin = 10;
-            int newYorkToStockholmTimeZoneDiffernece = 6;
             int stockholmDepartureTimeHour = 14;
             int stockholmDepartureTimeMin = 3;
-            int stockholmToNewYorkTimeZoneDiffernece = -6;
+            int timeZone = 6;        
             /*
             Vi deklarerar och instansier en bool för att 
             använda den som condition i våran while-loop, 
@@ -26,7 +25,7 @@ namespace Lab1
                 vi använder en while-loop för att vi vill at programmet 
                 ska fortsätta tills användaren väljer att stänga av den,
                  */
-                Console.Write("\n\t\tFlight Table \n\n\t[1] Stockholm -> New York\n\t[2] New York -> Stockholm\n\t[3] End Program");
+                Console.WriteLine("\n\t\tFlight Table \n\n\t[1] Stockholm -> New York\n\t[2] New York -> Stockholm\n\t[3] End Program");
                 Console.Write("\n\tCHOICE: ");
                 /*
                  vi tar in en string-input från användaren och försöker 
@@ -42,12 +41,12 @@ namespace Lab1
                     case 1:
                         Console.Clear();
                         Console.WriteLine("\tStockholm to New York\n");
-                        FlightCalculation(stockholmDepartureTimeHour, stockholmDepartureTimeMin, stockholmToNewYorkTimeZoneDiffernece); 
+                        FlightCalculation(stockholmDepartureTimeHour, stockholmDepartureTimeMin, -timeZone); 
                         break;
                     case 2:
                         Console.Clear();
                         Console.WriteLine("\tNew York to Stockholm\n");
-                        FlightCalculation(newYorkDepartureTimeHour, newYorkDepartureTimeMin, newYorkToStockholmTimeZoneDiffernece);
+                        FlightCalculation(newYorkDepartureTimeHour, newYorkDepartureTimeMin, timeZone);
                         break;
                     case 3:
                         menu = false;
